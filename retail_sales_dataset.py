@@ -12,9 +12,10 @@ uploaded_file = st.file_uploader("Upload file CSV atau Excel kamu di sini, untuk
 
 if uploaded_file is not None:
     if uploaded_file.name.endswith(".csv"):
-        df = pd.read_csv(uploaded_file)
+        # Tambahkan sep=';' di sini agar kolomnya terpisah dengan benar!
+        df = pd.read_csv(uploaded_file, sep=';')
     else:
-        df = pd.read_excel(uploaded_file)
+        df = pd.read_excel(uploaded_file)      
 else:
     # Data sampel...
     # Data sampel sementara jika belum ada file yang di-upload
